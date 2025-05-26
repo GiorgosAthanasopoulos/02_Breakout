@@ -1,12 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://c01ekiborm4hu"]
 
+[ext_resource type="Script" uid="uid://b2v6kxw5jrwga" path="res://game/scripts/game.gd" id="1_dakft"]
 [ext_resource type="PackedScene" uid="uid://bdtrwinqu6es0" path="res://wall/horizontal_wall.tscn" id="1_l1rk1"]
 [ext_resource type="PackedScene" uid="uid://cbusi6yyisxht" path="res://wall/vertical_wall.tscn" id="2_vasa2"]
 [ext_resource type="PackedScene" uid="uid://c3jh6ma2obxaq" path="res://paddle/paddle.tscn" id="3_h7iqs"]
-[ext_resource type="PackedScene" uid="uid://dmw0vdjlm2m6u" path="res://ball/ball.tscn" id="4_4fuuu"]
 [ext_resource type="PackedScene" uid="uid://dtowkumn5jd34" path="res://brick/brick.tscn" id="5_dxrkv"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_dakft")
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = -1
@@ -19,38 +20,78 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.901961, 0.960784, 1, 1)
 
+[node name="ScoreLabel" type="Label" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -70.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Score: 0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="HighScoreLabel" type="Label" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -140.0
+offset_right = -10.0
+offset_bottom = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "High Score: 0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="LivesLabel" type="Label" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1270.0
+offset_top = -70.0
+offset_right = -1060.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Lives: 3"
+vertical_alignment = 2
+
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="Ceiling" parent="Walls" instance=ExtResource("1_l1rk1")]
 position = Vector2(640, 2.5)
-collision_mask = 0
 
 [node name="Ground" parent="Walls" instance=ExtResource("1_l1rk1")]
 position = Vector2(640, 717.5)
 collision_layer = 2
-collision_mask = 0
 
 [node name="WallLeft" parent="Walls" instance=ExtResource("2_vasa2")]
 position = Vector2(2.5, 360)
-collision_layer = 4
-collision_mask = 0
 
 [node name="WallRight" parent="Walls" instance=ExtResource("2_vasa2")]
 position = Vector2(1277.5, 360)
-collision_layer = 4
-collision_mask = 0
 
 [node name="Entities" type="Node2D" parent="."]
 
 [node name="Paddle" parent="Entities" instance=ExtResource("3_h7iqs")]
 position = Vector2(640, 658)
-collision_layer = 16
-collision_mask = 0
-
-[node name="Ball" parent="Entities" instance=ExtResource("4_4fuuu")]
-position = Vector2(640, 420)
-collision_layer = 0
-collision_mask = 31
 
 [node name="Bricks" type="Node2D" parent="."]
 
