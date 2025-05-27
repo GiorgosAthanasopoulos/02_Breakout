@@ -25,6 +25,7 @@ buses/default_bus_layout="res://audio/buses/default_bus_layout.tres"
 
 Audio="*res://audio/scripts/audio.gd"
 Config="*res://game/scripts/config.gd"
+Events="*res://game/scripts/events.gd"
 
 [debug]
 

@@ -19,3 +19,4 @@ color = Color(1, 0.0431373, 0.380392, 1)
 polygon = PackedVector2Array(0, -26, 7, -25, 12, -23, 18, -19, 23, -12, 25, -6, 26, 0, 25, 7, 22, 13, 19, 18, 14, 22, 7, 25, 0, 26, -7, 25, -13, 22, -19, 18, -23, 14, -25, 7, -26, 0, -25, -6, -22, -13, -19, -18, -14, -23, -7, -25)
 
 [node name="SFXAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
