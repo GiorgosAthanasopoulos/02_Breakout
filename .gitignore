@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+02_Breakout.sh
+02_Breakout.x86_64
